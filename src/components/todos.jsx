@@ -3,6 +3,7 @@ import { supabase } from './Supabase.js';
 import { userContext } from '../App.jsx';
 import { InputArea } from './inputArea.jsx';
 import { DeleteTodo } from './Delete.jsx';
+import { EditTodo } from './Edit.jsx';
 
 
 
@@ -34,6 +35,7 @@ export const Todos = () => {
 
                         <li>{todo.todo}</li>
                         <DeleteTodo id={todo.id} />
+                        <EditTodo id={todo.id} />
                     </div>
                 )
             })}
