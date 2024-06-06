@@ -1,6 +1,8 @@
 import { useEffect, useContext } from 'react';
 import { supabase } from './Supabase.js';
 import { userContext } from '../App.jsx';
+import { InputArea } from './inputArea.jsx';
+import { DeleteTodo } from './Delete.jsx';
 
 
 
@@ -20,13 +22,23 @@ export const Todos = () => {
 
     }
     console.log(todos);
+
+
+
     return (
         <>
-            <ul>{todos.map((e) => {
+            <div>{todos.map((todo) => {
                 return (
-                    <li key={e.id}>{e.todo}</li>
+
+                    <div key={todo.id}>
+
+                        <li>{todo.todo}</li>
+                        <DeleteTodo id={todo.id} />
+                    </div>
                 )
-            })}</ul>
+            })}
+
+            </div>
         </>
     )
 }
