@@ -10,13 +10,10 @@ export const EditTodo = ({ id }) => {
 
         const answer = prompt("ne ile değiştirmek istersiniz")
 
-        const { error } = await supabase
+        const { data, error } = await supabase
             .from('todos')
             .update({ todo: answer })
             .eq('id', id)
-
-
-
 
         const updateTodos = todos.map(todo => {
             if (todo.id === id) {

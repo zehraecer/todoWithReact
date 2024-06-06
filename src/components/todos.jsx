@@ -4,11 +4,12 @@ import { userContext } from '../App.jsx';
 import { InputArea } from './inputArea.jsx';
 import { DeleteTodo } from './Delete.jsx';
 import { EditTodo } from './Edit.jsx';
+import { CompletedBtn } from './Completed.jsx';
 
 
 
 export const Todos = () => {
-    const { todos, setTodos } = useContext(userContext);
+    const { todos, setTodos, completedRef } = useContext(userContext);
 
     useEffect(() => {
         getTodos()
@@ -31,11 +32,12 @@ export const Todos = () => {
             <div>{todos.map((todo) => {
                 return (
 
-                    <div key={todo.id}>
+                    <div key={todo.id} ref={completedRef} >
 
                         <li>{todo.todo}</li>
                         <DeleteTodo id={todo.id} />
                         <EditTodo id={todo.id} />
+                        <CompletedBtn id={todo.id} />
                     </div>
                 )
             })}
