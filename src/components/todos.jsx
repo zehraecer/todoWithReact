@@ -19,7 +19,6 @@ export const Todos = () => {
     async function getTodos() {
         let { data, error } = await supabase.from('todos').select()
 
-
         setTodos(data)
 
     }
@@ -28,7 +27,7 @@ export const Todos = () => {
 
     return (
         <>
-            <div className='todoList' >{todos.map((todo) => {
+            <div ref={completedRef} className='todoList' >{todos.map((todo) => {
                 return (
 
                     <div key={todo.id} ref={completedRef} className='todos'>
