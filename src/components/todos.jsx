@@ -20,24 +20,28 @@ export const Todos = () => {
         let { data, error } = await supabase.from('todos').select()
 
 
-        return setTodos(data)
+        setTodos(data)
 
     }
-    console.log(todos);
 
 
 
     return (
         <>
-            <div>{todos.map((todo) => {
+            <div className='todoList' >{todos.map((todo) => {
                 return (
 
-                    <div key={todo.id} ref={completedRef} >
+                    <div key={todo.id} ref={completedRef} className='todos'>
 
-                        <li>{todo.todo}</li>
-                        <DeleteTodo id={todo.id} />
-                        <EditTodo id={todo.id} />
-                        <CompletedBtn id={todo.id} />
+                        <li className={todo.completed ? "active" : "noActive"}>{todo.todo}</li>
+
+                        <div className="btns">
+
+                            <div><DeleteTodo id={todo.id} /></div>
+                            <div><EditTodo id={todo.id} /></div>
+                            <div><CompletedBtn id={todo.id} /></div>
+
+                        </div>
                     </div>
                 )
             })}

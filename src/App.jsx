@@ -13,8 +13,11 @@ function App() {
 
   return (
     <userContext.Provider value={{ todos, setTodos, completedRef }}>
-      <InputArea />
-      <Todos />
+      <div className='container'>
+        <InputArea />
+        <Todos />
+
+      </div>
     </userContext.Provider>
   )
 }

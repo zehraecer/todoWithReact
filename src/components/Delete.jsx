@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { supabase } from "./Supabase";
 import { userContext } from "../App";
-
+import { MdOutlineDelete } from "react-icons/md";
 
 export const DeleteTodo = ({ id }) => {
 
@@ -13,6 +13,7 @@ export const DeleteTodo = ({ id }) => {
             .from('todos')
             .delete()
             .eq('id', id)
+
         setTodos(todos.filter(todo => todo.id !== id))
 
     }
@@ -20,7 +21,7 @@ export const DeleteTodo = ({ id }) => {
     return (
         <>
 
-            <button onClick={deleteBtn}>Delete</button>
+            <button className="btn" onClick={deleteBtn}><MdOutlineDelete /></button>
 
         </>
 

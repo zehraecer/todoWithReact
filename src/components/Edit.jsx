@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { supabase } from "./Supabase";
 import { userContext } from "../App";
+import { CiEdit } from "react-icons/ci";
 
 export const EditTodo = ({ id }) => {
 
@@ -10,6 +11,7 @@ export const EditTodo = ({ id }) => {
 
         const answer = prompt("ne ile değiştirmek istersiniz")
 
+        if (!answer) return
         const { data, error } = await supabase
             .from('todos')
             .update({ todo: answer })
@@ -19,6 +21,8 @@ export const EditTodo = ({ id }) => {
             if (todo.id === id) {
                 todo.todo = answer
                 return todo
+            } else {
+                return todo;
             }
         })
 
@@ -30,7 +34,7 @@ export const EditTodo = ({ id }) => {
 
         <>
 
-            <button onClick={editBtn}>Edit</button>
+            <button className="btn" onClick={editBtn}><CiEdit /></button>
 
         </>
     )

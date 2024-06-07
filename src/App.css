@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -11,9 +11,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +24,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -39,4 +42,77 @@
 
 .read-the-docs {
   color: #888;
+}
+
+
+form {
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  padding-block: 11px;
+  padding-left: 15px;
+  padding-right: 249px;
+  border-right: none;
+  border: none;
+  background-color: #F1ECE6;
+  border-radius: 15px 0px 0px 15px;
+  font-size: 15px;
+
+}
+
+.submit {
+  padding: 11px 15px;
+  border-radius: 0px 15px 15px 0px;
+  background-color: #76B7CD;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.todoList {
+  width: 100%;
+  display: flex;
+  margin-top: 40px;
+  background-color: #F1ECE6;
+  flex-direction: column;
+  padding-block: 15px;
+  border-radius: 15px;
+}
+
+.todos {
+  padding-block: 10px;
+  margin: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #76B7CD;
+}
+
+.btns {
+  display: flex;
+}
+
+.btn {
+  background-color: transparent;
+  color: brown;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.active {
+  opacity: 0.5;
 }

@@ -1,4 +1,4 @@
-import { useRef, useContext } from "react"
+import { useRef, useContext, useState } from "react"
 import { supabase } from './Supabase.js';
 import { userContext } from "../App.jsx";
 
@@ -6,6 +6,7 @@ import { userContext } from "../App.jsx";
 export const InputArea = () => {
     const inputRef = useRef()
     const { todos, setTodos } = useContext(userContext);
+    const [input, setInput] = useState("")
 
     const handleForm = async (e) => {
         e.preventDefault()
@@ -23,6 +24,8 @@ export const InputArea = () => {
             .select()
 
         setTodos([...todos, ...data])
+        setInput("")
+
         console.log(data);
 
 
@@ -30,12 +33,12 @@ export const InputArea = () => {
 
     return (
         <>
-            <div>
+            <div className="form">
 
                 <form ref={inputRef}>
 
-                    <input type="text" name="todo" placeholder="Add Todo" />
-                    <button type="submit" onClick={handleForm} >Add</button>
+                    <input type="text" name="todo" placeholder="What do you need to do" value={input} onChange={(e) => setInput(e.target.value)} />
+                    <button type="submit" className="submit" onClick={handleForm} >Add</button>
 
                 </form>
             </div>
