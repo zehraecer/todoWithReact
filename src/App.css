@@ -102,7 +102,7 @@ input {
 
 .btn {
   background-color: transparent;
-  color: brown;
+  color: #e5aa6a;
 }
 
 input[type="text"]:focus {
