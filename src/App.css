@@ -116,3 +116,7 @@ li {
 .active {
   opacity: 0.5;
 }
+
+.todoLogo {
+  margin-bottom: 40px;
+}
