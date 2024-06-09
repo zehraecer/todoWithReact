@@ -8,11 +8,13 @@ export const userContext = createContext()
 function App() {
   const [todos, setTodos] = useState([])
   const completedRef = useRef()
+  const todoRef = useRef()
+
 
 
 
   return (
-    <userContext.Provider value={{ todos, setTodos, completedRef }}>
+    <userContext.Provider value={{ todos, setTodos, completedRef, todoRef }}>
       <div className='container'>
         <img className='todoLogo' src="./todoLogo.png" alt="" />
         <InputArea />

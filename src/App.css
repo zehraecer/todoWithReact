@@ -67,7 +67,10 @@ input {
   border-radius: 15px 0px 0px 15px;
   font-size: 15px;
 
+
 }
+
+
 
 .submit {
   padding: 11px 15px;
@@ -86,6 +89,10 @@ input {
   flex-direction: column;
   padding-block: 15px;
   border-radius: 15px;
+}
+
+.todoListDeneme {
+  display: none;
 }
 
 .todos {
@@ -115,6 +122,7 @@ li {
 
 .active {
   opacity: 0.5;
+  text-decoration: line-through;
 }
 
 .todoLogo {

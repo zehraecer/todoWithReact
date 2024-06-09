@@ -27,7 +27,7 @@ export const Todos = () => {
 
     return (
         <>
-            <div ref={completedRef} className='todoList' >{todos.map((todo) => {
+            <div ref={completedRef} className={todos.length > 0 ? 'todoList' : "todoListDeneme"}  >{todos.map((todo) => {
                 return (
 
                     <div key={todo.id} ref={completedRef} className='todos'>
