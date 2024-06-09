@@ -10,9 +10,6 @@ function App() {
   const completedRef = useRef()
   const todoRef = useRef()
 
-
-
-
   return (
     <userContext.Provider value={{ todos, setTodos, completedRef, todoRef }}>
       <div className='container'>

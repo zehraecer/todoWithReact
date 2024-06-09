@@ -7,8 +7,6 @@ export const CompletedBtn = ({ id }) => {
 
     const { todos, setTodos, completedRef } = useContext(userContext)
 
-
-
     const completedBtn = async () => {
 
         const completedTodo = todos.find(todo => todo.id === id)

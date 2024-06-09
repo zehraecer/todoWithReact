@@ -7,7 +7,6 @@ import { EditTodo } from './Edit.jsx';
 import { CompletedBtn } from './Completed.jsx';
 
 
-
 export const Todos = () => {
     const { todos, setTodos, completedRef } = useContext(userContext);
 
@@ -22,8 +21,6 @@ export const Todos = () => {
         setTodos(data)
 
     }
-
-
 
     return (
         <>
