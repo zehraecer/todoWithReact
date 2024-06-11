@@ -2,7 +2,6 @@ import { useRef, useContext, useState } from "react"
 import { supabase } from './Supabase.js';
 import { userContext } from "../App.jsx";
 
-
 export const InputArea = () => {
     const inputRef = useRef()
     const { todos, setTodos } = useContext(userContext);
@@ -10,11 +9,8 @@ export const InputArea = () => {
 
     const handleForm = async (e) => {
         e.preventDefault()
-        console.log(inputRef.current);
-
         const formData = new FormData(inputRef.current)
         const formObj = Object.fromEntries(formData.entries());
-
 
         const { data, error } = await supabase
             .from('todos')
@@ -25,9 +21,6 @@ export const InputArea = () => {
 
         setTodos([...todos, ...data])
         setInput("")
-
-        console.log(data);
-
 
     }
 

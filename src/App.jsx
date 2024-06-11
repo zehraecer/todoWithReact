@@ -13,6 +13,7 @@ function App() {
   return (
     <userContext.Provider value={{ todos, setTodos, completedRef, todoRef }}>
       <div className='container'>
+
         <img className='todoLogo' src="./todoLogo.png" alt="" />
         <InputArea />
         <Todos />

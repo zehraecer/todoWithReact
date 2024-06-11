@@ -5,7 +5,7 @@ import { AiOutlineCheck } from "react-icons/ai";
 
 export const CompletedBtn = ({ id }) => {
 
-    const { todos, setTodos, completedRef } = useContext(userContext)
+    const { todos, setTodos } = useContext(userContext)
 
     const completedBtn = async () => {
 

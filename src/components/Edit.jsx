@@ -28,10 +28,8 @@ export const EditTodo = ({ id }) => {
 
         setTodos(updateTodos)
 
-
     }
     return (
-
         <>
 
             <button className="btn" onClick={editBtn}><CiEdit /></button>
